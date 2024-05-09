@@ -1,0 +1,181 @@
+@import '../../styles/typography';
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer {
+  position: relative;
+  display: flex;
+//   justify-content: space-between;
+//   width: 100%;
+  gap: 112px;
+  margin: 0 56px 0;
+
+  @include onPhone {
+    display: block;
+    min-height: 185px;
+    margin: 0 16px 0;
+  }
+
+  @include onTablet {
+    display: block;
+    margin: 0 24px 0;
+  }
+
+  @include onDesktop {
+    // height: 192px;
+    height: 216px;
+  }
+
+  &-logo {
+    height: 50px;
+
+    @include onPhone {
+      display: none;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+
+    &__list {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      @include onPhone {
+        display: none;
+      }
+
+
+
+      &_mobile {
+        display: none;
+
+        @include onPhone {
+          display: flex;
+          gap: 30px;
+        }
+      }
+    }
+
+    &__item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @include onTablet {
+        text-align: start;
+      }
+
+      &__title {
+        @extend %poppins-400;
+        line-height: 150%;
+        font-size: 16px;
+        padding: 0;
+        margin: 0;
+        height: 19px;
+        border-bottom: 1px solid $header-button-and-title-active-color;
+      }
+    }
+  }
+
+  &-container {
+    display: flex;
+    gap: 176px;
+
+    @include onPhone {
+      // display: flex;
+      align-items: center;
+      // margin: auto;
+      flex-direction: column;
+      gap: 16px;
+      // justify-content: center;
+    }
+
+    @include onTablet {
+      gap: 117px;
+    }
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__item {
+    @extend %poppins-400;
+    color: $header-button-and-title-active-color;
+    line-height: 150%;
+    font-size: 16px;
+
+    @include onTablet {
+      text-align: start;
+    }
+  }
+
+  &__title {
+    @extend %poppins-400;
+    color: $header-button-and-title-active-color;
+    line-height: 150%;
+    font-size: 16px;
+    text-align: start;
+
+    &-copyright {
+      position: absolute;
+      display: flex;
+      gap: 8px;
+    //   width: 100%;
+      bottom: 0;
+      right: 0;
+
+      @include onPhone {
+        bottom: 24px;
+        font-size: 12px;
+        text-align: end;
+        right: 16px;
+      }
+
+      @include onTablet {
+        position: relative;
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-size: 12px;
+      }
+
+      @include onDesktop {
+        margin-top: 24px;
+        margin-bottom: 32px;
+      }
+    }
+
+    &-email {
+      @include onPhone {
+        display: none;
+      }
+    }
+
+    &-phone {
+      // position: absolute;
+      @include onPhone {
+        display: block;
+        margin: auto;
+        width: 100%;
+      }
+
+      @include onTablet {
+        margin-top: 16px;
+      }
+    }
+  }
+}
